@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>My Interactive To-Do List</h1>
+    <input type="text" id="taskInput" placeholder="Add a new task">
+    <button id="addTaskButton">
+         Task
+        </button>
+        <div>
+            <ul>
+        <li>House Chores<input type="checkbox"id="completedTasks"></li>
+        <li>Shopping<input type="checkbox" id="completedtasks"></li>
+        <li>Homework<input type="checkbox"id="completedtasks"></li>
+        <li>Exercise<input type="checkbox"id="completedtasks"></li>
+        <li>Reading<input type="checkbox"id="completedtasks"></li>
+        <li>Cooking<input type="checkbox"id="completedtasks"></li>
+        <li>Cleaning<input type="checkbox"id="completedtasks"></li>
+        <li>Gardening<input type="checkbox"id="completedtasks"></li>
+        </div>
+    </ul>
+
+    <script>
+        const taskInput = document.getElementById('taskInput');
+        const addTaskButton = document.getElementById('addTaskButton');
+        const taskList = document.getElementById('taskList');
+        const completedTasks = document.getElementById('completedTasks');
+
+        addTaskButton.addEventListener('click', () => {
+            const taskText = taskInput.value.trim();
+            if (taskText) {
+                const listItem = document.createElement('li');
+                listItem.textContent = taskText;
+                taskList.appendChild(listItem);
+                taskInput.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
